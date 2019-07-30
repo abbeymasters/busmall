@@ -13,7 +13,7 @@ footer p {
     opacity: 0.5;
 }
 
-#results {
+h2 {
     font-family: Roboto;
     font-weight: 700;
     font-size: 24px;
@@ -27,4 +27,43 @@ footer p {
     background-repeat: no-repeat;
     background-size: cover;
     height: 300px;
+}
+
+#product-buttons {
+    margin-top: 4%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    margin-top: 8%;
+}
+
+#product-buttons button {
+    margin: 10px;
+    padding: 0;
+    border: solid 5px #f6d9c9;
+    padding-bottom: 0;
+    width: 310px;
+    height: 310px;
+}
+
+#product-buttons button:hover {
+    margin: 10px;
+    padding: 0;
+    border: solid 5px #979797;
+    padding-bottom: 0;
+    width: 310px;
+    height: 310px;
+}
+
+#product-buttons img {
+    width: 300px;
+    height: 300px;
+    object-position: cover;
+}
+
+#results {
+    margin-bottom: 5%;
 }
