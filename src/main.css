@@ -1,4 +1,6 @@
-
+body {
+  margin: 0;
+}
 
 header {
   border-bottom: 10px #979797 solid;
