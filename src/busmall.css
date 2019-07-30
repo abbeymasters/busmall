@@ -112,3 +112,7 @@ main {
     justify-content: center;
     width: 960px;
 }
+
+.hidden {
+    display: none;
+}
