@@ -1,16 +1,22 @@
 ## Technical Plan
 
-            Generate Three Random Images
+        Generate Three Random Images
 
-    User Makes a Choice         Three New Images Generate
-                                        - no duplicates
-    Tracks Clicks
-    Tracks Views                
+        User Makes a Choice 
+        User presses Submit button        
 
-                25 Selections Occur
-                - Disable Images
-                - Get Data
-                - Display Results
+        Track Clicks
+        Track Views  
+        Add turn  
+        
+        Take out images from round for next set
+        Three New Images Generate         
+
+        After 25 Selections Occur
+        - Disable Images
+        - Get Data
+        - Display Results
+        
                 
 ## Data 
 - Clicks and views will need to be tallied, saved and updated each round
