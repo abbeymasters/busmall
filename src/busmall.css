@@ -1,10 +1,30 @@
 footer {
     background-color: #f6d9c9;
     height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer p {
     font-family: Roboto Condensed;
     font-size: 14px;
     text-align: center;
+    opacity: 0.5;
+}
+
+#results {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    color: #979797;
+}
+
+#image {
+    background-image: url("/assets/alexandre-godreau-7YlHU_ZPS34-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
 }

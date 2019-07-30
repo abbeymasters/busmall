@@ -1,47 +1,50 @@
-html {
-  width: 100%;
+
+
+header {
+  border-bottom: 10px #979797 solid;
 }
+
 nav {
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 3%;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 3%;
 }
 
 nav a {
-    color: #4d4d4d;
-    text-decoration: none;
+  color: #4d4d4d;
+  text-decoration: none;
 }
 
 #busmall-text {
-    margin-top: 13%;
-    background-color: transparent;
-    text-align: center;
+  margin-top: 13%;
+  background-color: transparent;
+  text-align: center;
 }
 
 #bus-text {
-    font-family: Bowlby One SC;
-    font-size: 200px;
-    color: #f6d9c9;
-    line-height: 0.3em;
+  font-family: Bowlby One SC;
+  font-size: 200px;
+  color: #f6d9c9;
+  line-height: 0.3em;
 }
 
 #mall-text {
-    font-family: Roboto Condensed;
-    font-weight: 700;
-    font-size: 175px;
-    color: #979797;
+  font-family: Roboto Condensed;
+  font-weight: 700;
+  font-size: 175px;
+  color: #979797;
 }
 
 #tagline {
-    font-family: Pacifico;
-    font-size: 28px;
-    color: #979797;
+  font-family: Pacifico;
+  font-size: 28px;
+  color: #979797;
 }
 
 #drop {
-    color: #f6d9c9;
+  color: #f6d9c9;
 }
 
 /* FONTS */
