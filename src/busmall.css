@@ -1,0 +1,10 @@
+footer {
+    background-color: #f6d9c9;
+    height: 150px;
+}
+
+footer p {
+    font-family: Roboto Condensed;
+    font-size: 14px;
+    text-align: center;
+}

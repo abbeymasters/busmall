@@ -9,8 +9,9 @@
 
                 25 Selections Occur
                 - Disable Images
+                - Get Data
                 - Display Results
-
+                
 ## Data 
 - Clicks and views will need to be tallied, saved and updated each round
 - Will need to make sure images from the round before aren't included in the pool of assets
