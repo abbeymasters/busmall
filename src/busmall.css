@@ -19,6 +19,7 @@ h2 {
     font-size: 24px;
     text-align: center;
     color: #979797;
+    letter-spacing: 1px;
 }
 
 #image {
@@ -46,7 +47,7 @@ main {
 
 #submit-button {
     padding: 10px 20px;
-    border-radius: 15%;
+    border-radius: 10px 10px;
     font-family: Roboto Condensed;
     font-size: 16px;
     color: #979797;
@@ -57,7 +58,7 @@ main {
 
 #submit-button:hover {
     padding: 10px 20px;
-    border-radius: 15%;
+    border-radius: 10px 10px;
     font-family: Roboto Condensed;
     font-size: 16px;
     color: #979797;
@@ -70,6 +71,7 @@ main {
     margin: 10px;
     padding: 0;
     border: solid 5px #f6d9c9;
+    border-radius: 20%;
     padding-bottom: 0;
     width: 310px;
     height: 310px;
@@ -97,11 +99,13 @@ main {
     width: 300px;
     height: 300px;
     object-position: cover;
+    border-radius: 19%;
 }
 
 #results {
     margin-bottom: 5%;
     border: solid 3px #979797;
+    border-radius: 25px 25px;
     margin-left: auto;
     margin-right: auto;
     display: flex;

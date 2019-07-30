@@ -19,6 +19,10 @@ nav a {
   text-decoration: none;
 }
 
+nav a:hover {
+  color: #f6d9c9;
+}
+
 #busmall-text {
   margin-top: 10%;
   background-color: transparent;
