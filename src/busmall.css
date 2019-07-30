@@ -31,13 +31,39 @@ h2 {
 
 #product-buttons {
     margin-top: 4%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     display: flex;
     justify-content: center;
 }
 
 main {
-    margin-top: 8%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+#submit-button {
+    padding: 10px 20px;
+    border-radius: 15%;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    color: #979797;
+    border: 3px solid #f6d9c9;
+    text-align: center;
+    width: 10%;
+}
+
+#submit-button:hover {
+    padding: 10px 20px;
+    border-radius: 15%;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    color: #979797;
+    border: 3px solid #979797;
+    text-align: center;
+    width: 10%;
 }
 
 #product-buttons button {
@@ -58,6 +84,15 @@ main {
     height: 310px;
 }
 
+#product-buttons button:focus {
+    margin: 10px;
+    padding: 0;
+    border: solid 5px #979797;
+    padding-bottom: 0;
+    width: 310px;
+    height: 310px;
+}
+
 #product-buttons img {
     width: 300px;
     height: 300px;
@@ -66,4 +101,10 @@ main {
 
 #results {
     margin-bottom: 5%;
+    border: solid 3px #979797;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    width: 960px;
 }
