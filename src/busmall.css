@@ -1,3 +1,8 @@
+p {
+    font-family: Roboto Condensed;
+    color: #979797;
+}
+
 footer {
     background-color: #f6d9c9;
     height: 150px;
@@ -11,6 +16,7 @@ footer p {
     font-size: 14px;
     text-align: center;
     opacity: 0.5;
+    color: gray;
 }
 
 h2 {
