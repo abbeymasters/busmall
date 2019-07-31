@@ -1,3 +1,5 @@
+import products from './products.js';
+
 const store = {
     storage: window.localStorage,
     save(key, item) {
@@ -8,6 +10,14 @@ const store = {
         const json = store.storage.getItem(key);
         const item = JSON.parse(json);
         return item;
+    },
+    getProducts() {
+        let items = store.get('products');
+        if(!items) {
+            store.save('products', products);
+            items = products;
+        }
+        return items;
     }
 };
 
