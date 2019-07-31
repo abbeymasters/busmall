@@ -23,7 +23,7 @@ class ProductSet {
     }
 
     hasProducts() {
-        return this.list.lenth > 0;
+        return this.list.length > 0;
     }
 }
 

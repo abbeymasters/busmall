@@ -43,28 +43,27 @@ main {
     flex-direction: column;
     align-items: center;
     margin-bottom: 5%;
+    text-align: center;
 }
 
 #submit-button {
-    padding: 10px 20px;
+    padding: 10px 40px;
     border-radius: 10px 10px;
     font-family: Roboto Condensed;
     font-size: 16px;
     color: #979797;
     border: 3px solid #f6d9c9;
-    text-align: center;
-    width: 10%;
+    margin-top: 30px;
 }
 
 #submit-button:hover {
-    padding: 10px 20px;
+    padding: 10px 40px;
     border-radius: 10px 10px;
     font-family: Roboto Condensed;
     font-size: 16px;
     color: #979797;
     border: 3px solid #979797;
     text-align: center;
-    width: 10%;
 }
 
 #product-buttons button {
