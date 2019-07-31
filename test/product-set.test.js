@@ -17,7 +17,7 @@ test('Copying the source list', assert => {
     assert.notEqual(productSet.list, products);
 });
 
-test('Get a random tree', assert => {
+test('Get a random product', assert => {
     // arrange
     const productSet = new ProductSet(products);
 
@@ -26,4 +26,16 @@ test('Get a random tree', assert => {
 
     // assert
     assert.ok(products.includes(product));
+});
+
+test('Remove a product from list', assert => {
+    // arrange
+    const productSet = new ProductSet(products);
+    const productToRemove = products[0];
+
+    // act
+    productSet.removeById(productToRemove.id);
+
+    // assert
+    assert.notOk(productSet.list.includes(productToRemove));
 });
