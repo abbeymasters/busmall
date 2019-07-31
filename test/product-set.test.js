@@ -5,7 +5,7 @@ const test = QUnit.test;
 
 QUnit.module('Product Set');
 
-test('Copying the source list', assert => {
+test('Copying the original list', assert => {
     // arrange
     // need to import the products data
 

@@ -1,44 +1,16 @@
 import store from './data/store.js';
 import products from './data/products.js';
+import ProductSet from '../src/product-set.js';
 import { getRandomInt } from './utility-functions.js';
 
 const quizSection = document.getElementById('quiz-section');
 const resultsSection = document.getElementById('results-section');
 const productButtonsSection = document.getElementById('product-buttons');
+const submitButton = document.getElementById('submit-button');
 
 let turns = 0;
-let live = true;
 
-const products = store.getProducts();
-const masterProductSet = new masterProductSet(products);
+const allProducts = store.getProducts();
+const masterProductSet = new masterProductSet(allProducts);
 
-function handleUserChoice(event) {
-    if(!live) return;
 
-    const productButtons = event.target;
-
-    // update the display
-
-    productButtonsSection.classList.add('reveal');
-    productButtons.parentNode.classList.add('choice');
-
-    // add a turn
-    turns++;
-
-    // need to add tracking
-
-};
-
-submitButton.addEventListener('click', () => {
-    if(!masterProductSet.hasProducts()) {
-        displayFinalProducts();
-        return;
-    }
-
-    productButtonsSection.classList.remove('reveal');
-    submitButton.classList.add('hidden');
-    live = true;
-    
-})
-
-}
