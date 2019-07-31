@@ -1,16 +1,33 @@
-// import store from './data/store.js';
-// import products from './data/products.js';
-// import ProductSet from '../src/product-set.js';
-// import { getRandomInt } from './utility-functions.js';
+import store from './data/store.js';
+import ProductSet from '../src/product-set.js';
 
-// const quizSection = document.getElementById('quiz-section');
-// const resultsSection = document.getElementById('results-section');
-// const productButtonsSection = document.getElementById('product-buttons');
-// const submitButton = document.getElementById('submit-button');
+const buttonOne = document.getElementById('button-1');
+const buttonTwo = document.getElementById('button-2');
+const buttonThree = document.getElementById('button-3');
 
-// let turns = 0;
+let turns = 0;
 
-// const allProducts = store.getProducts();
-// const masterProductSet = new masterProductSet(allProducts);
+// pulling products from store
+const allProducts = store.getProducts();
 
+// creating a new master list by copying the original products from store 
+const newProductSet = new ProductSet(allProducts);
+
+// create new array for images to go in when shown on page
+let displayed = [];
+
+// get three randomProducts to push into displayed empty array
+const randomOne = newProductSet.getRandomProduct();
+buttonOne.firstChild.src = randomOne.image;
+displayed.push(randomOne);
+
+const randomTwo = newProductSet.getRandomProduct();
+buttonTwo.firstChild.src = randomTwo.image;
+displayed.push(randomTwo);
+
+const randomThree = newProductSet.getRandomProduct();
+buttonThree.firstChild.src = randomThree.image;
+displayed.push(randomThree);
+
+// need to make button run 
 

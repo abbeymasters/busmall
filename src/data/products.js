@@ -47,7 +47,7 @@ const products = [
     {
         id: 'dragon',
         name: 'Dragon',
-        image: '/assets/products/dragon-jpg'
+        image: '/assets/products/dragon.jpg'
     },
     {
         id: 'pen',
@@ -72,7 +72,7 @@ const products = [
     {
         id: 'sweep',
         name: 'Sweep',
-        image: '/assets/products/sweep.jpg'
+        image: '/assets/products/sweep.png'
     },
     {
         id: 'tauntaun',
@@ -87,7 +87,7 @@ const products = [
     {
         id: 'usb',
         name: 'USB',
-        image: '/assets/products/usb.jpg'
+        image: '/assets/products/usb.gif'
     },
     {
         id: 'water-can',

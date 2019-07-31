@@ -22,7 +22,6 @@ test('Get & Save Methods', assert => {
 test('get products through bootstrapping', assert => {
     // arrange
     
-
     // act
     const gotProducts = store.getProducts();
 
