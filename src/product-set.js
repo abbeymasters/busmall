@@ -20,18 +20,18 @@ class ProductSet {
             }
             return;
         }
-    }
+    }}
 
-    // need new array of three images
-    // and a new list without the clicked image
-    // need to loop through three times to get three images
-    getThreeArray() {
-        let randomThree = [];
-    }
+//     // need new array of three images
+//     // and a new list without the clicked image
+//     // need to loop through three times to get three images
+//     getThreeArray() {
+//         let randomThree = [];
+//     }
 
-    hasProducts() {
-        return this.list.length > 0;
-    }
-}
+//     hasProducts() {
+//         return this.list.length > 0;
+//     }
+// }
 
 export default ProductSet;
