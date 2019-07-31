@@ -40,27 +40,27 @@ for(let i = 0; i < buttons.length; i++) {
     button.addEventListener('click', handleUserChoice);
 }
 
+// user needs to choose one of randomly selected images
+
 function handleUserChoice() {
 
 // need to take last shown images out of array and reset shownImage array
     const removedSet = new ProductSet(allProducts);
-   
     for(let i = 0; i < shownImage.length; i++) {
         removedSet.removeById(shownImage[i].id);
     }
-   
     shownImage = [];
 
 // get three randomProducts to push into new array
-    const randomOne = removedSet.getRandomProduct();
+    let randomOne = removedSet.getRandomProduct();
     buttonOne.firstChild.src = randomOne.image;
     shownImage.push(randomOne);
 
-    const randomTwo = removedSet.getRandomProduct();
+    let randomTwo = removedSet.getRandomProduct();
     buttonTwo.firstChild.src = randomTwo.image;
     shownImage.push(randomTwo);
 
-    const randomThree = removedSet.getRandomProduct();
+    let randomThree = removedSet.getRandomProduct();
     buttonThree.firstChild.src = randomThree.image;
     shownImage.push(randomThree);
     
