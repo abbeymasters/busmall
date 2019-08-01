@@ -6,6 +6,7 @@ const buttonTwo = document.getElementById('button-2');
 const buttonThree = document.getElementById('button-3');
 const quizSection = document.getElementById('quiz-section');
 const resultsSection = document.getElementById('results-section');
+const turnCount = document.getElementById('turns');
 
 let turns = 0;
 
@@ -23,7 +24,7 @@ let shownImage = [];
 
 const randomOne = newProductSet.getRandomProduct();
 buttonOne.firstChild.src = randomOne.image;
-buttonOne.firstChild.id = randomOne.id;
+buttonOne.id = randomOne.id;
 shownImage.push(randomOne);
 
 const randomTwo = newProductSet.getRandomProduct();
@@ -49,31 +50,45 @@ function handleUserChoice() {
 // need to take last shown images out of original array 
     const removedSet = new ProductSet(allProducts);
     for(let i = 0; i < shownImage.length; i++) {
+        console.log(shownImage[i].id);
         removedSet.removeById(shownImage[i].id);
     }
+
+    console.log(shownImage);
+    console.log(removedSet);
 
 // get three randomProducts to push into new array
     const randomOne = removedSet.getRandomProduct();
     buttonOne.firstChild.src = randomOne.image;
     buttonOne.firstChild.id = randomOne.id;
 
+
     const randomTwo = removedSet.getRandomProduct();
     buttonTwo.firstChild.src = randomTwo.image;
     buttonTwo.firstChild.id = randomTwo.id;
+
 
     const randomThree = removedSet.getRandomProduct();
     buttonThree.firstChild.src = randomThree.image;
     buttonThree.firstChild.id = randomThree.id;
 
+    console.log(randomOne);
+
+
 // adds a turn
     turns++;
+    displayResults();
 
-// checking turns
-    if(turns === 25) {
-        quizSection.classList.add('hidden');
-        resultsSection.classList.remove('hidden');
+    function displayResults() {
+
+        if(turns === 25) {
+            quizSection.classList.add('hidden');
+            resultsSection.classList.remove('hidden');
+        }
     }
-
+    // checking turns
+    turnCount.textContent = turns;
+        
 // need to track views
 
 
