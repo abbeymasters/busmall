@@ -42,7 +42,7 @@ h4 {
     text-align: center;
     color: #979797;
     letter-spacing: 1px;
-    line-height: 0.5em;
+    line-height: 0.3em;
 }
 
 #image {
@@ -80,6 +80,26 @@ main {
 }
 
 #submit-button:hover {
+    padding: 10px 40px;
+    border-radius: 10px 10px;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    color: #979797;
+    border: 3px solid #979797;
+    text-align: center;
+}
+
+#show-charts {
+    padding: 10px 40px;
+    border-radius: 10px 10px;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    color: #979797;
+    border: 3px solid #f6d9c9;
+    margin-top: 30px;
+}
+
+#show-charts:hover {
     padding: 10px 40px;
     border-radius: 10px 10px;
     font-family: Roboto Condensed;
