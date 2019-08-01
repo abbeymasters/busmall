@@ -75,30 +75,6 @@ function handleUserChoice() {
     buttonThree.firstChild.id = randomThree.id;
     shownImage.push(randomThree);
 
-    // track views
-
-    function trackViews(productId) {
-        const viewed = findById(views, productId);
-        if(viewed) {
-            viewed.views++;
-            return;
-        }
-        const view = {
-            id: productId, 
-            views: 1
-        };
-        views.push(view);
-    }
-
-    if(views.length) {
-        for(let i = 0; i < views.length; i++) {
-            const view = views[i];
-            const product = findById(allProducts, view.id);
-            const dom = renderViews(view, product);
-            viewsResults.appendChild(dom);
-        }
-    }
-
     // run tracking views
     if(randomOne && randomTwo && randomThree) {
         trackViews(randomOne.id);
@@ -125,7 +101,27 @@ function displayResults() {
     turnCount.textContent = turns;
 
     // need to track views
-
+    if(views.length) {
+        for(let i = 0; i < views.length; i++) {
+            const view = views[i];
+            const product = findById(allProducts, view.id);
+            const dom = renderViews(view, product);
+            viewsResults.appendChild(dom);
+        }
+    }
 // need to track clicks
 
+}
+
+function trackViews(productId) {
+    const viewed = findById(views, productId);
+    if(viewed) {
+        viewed.views++;
+        return;
+    }
+    const view = {
+        id: productId, 
+        views: 1
+    };
+    views.push(view);
 }
