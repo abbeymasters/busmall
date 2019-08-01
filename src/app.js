@@ -2,6 +2,7 @@ import store from './data/store.js';
 import ProductSet from '../src/product-set.js';
 import renderViews from '../src/render-views.js';
 import { findById } from '../src/utility-functions.js';
+import { renderClicks } from '../src/render-views.js';
 
 const buttonOne = document.getElementById('button-1');
 const buttonTwo = document.getElementById('button-2');
@@ -9,11 +10,12 @@ const buttonThree = document.getElementById('button-3');
 const quizSection = document.getElementById('quiz-section');
 const resultsSection = document.getElementById('results-section');
 const turnCount = document.getElementById('turns');
-// const clicksResults = document.getElementById('clicks-results');
+const clicksResults = document.getElementById('clicks-results');
 const viewsResults = document.getElementById('views-results');
 
 let turns = 0;
 let views = [];
+let clicks = [];
 
 // pulling products from store
 const allProducts = store.getProducts();
@@ -82,6 +84,17 @@ function handleUserChoice() {
         trackViews(randomThree.id);
     }
 
+    // run tracking clicks
+    const button = event.target;
+
+    if(button.value === randomOne.id) {
+        trackClicks(randomOne.id);
+    } else if(button.value === randomTwo.id) {
+        trackClicks(randomTwo.id);
+    } else {
+        trackClicks(randomThree.id);
+    }
+
     // adds a turn
     turns++;
 
@@ -100,7 +113,7 @@ function displayResults() {
     // checking turns
     turnCount.textContent = turns;
 
-    // need to track views
+    // need to show views
     if(views.length) {
         for(let i = 0; i < views.length; i++) {
             const view = views[i];
@@ -109,10 +122,17 @@ function displayResults() {
             viewsResults.appendChild(dom);
         }
     }
-// need to track clicks
-
+// need to show clicks
+    if(clicks.length) {
+        for(let i = 0; i < clicks.length; i++) {
+            const click = clicks[i];
+            const product = findById(allProducts, click.id);
+            const dom = renderClicks(click, product);
+            clicksResults.appendChild(dom);
+        }
+    }
 }
-
+// trackViews function
 function trackViews(productId) {
     const viewed = findById(views, productId);
     if(viewed) {
@@ -124,4 +144,18 @@ function trackViews(productId) {
         views: 1
     };
     views.push(view);
+}
+
+// trackClicks function 
+function trackClicks(productId) {
+    const clicked = findById(clicks, productId);
+    if(clicked) {
+        clicked.clicks++;
+        return;
+    }
+    const click = {
+        id: productId,
+        clicks: 1
+    };
+    clicks.push(click);
 }

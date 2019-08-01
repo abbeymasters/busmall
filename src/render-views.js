@@ -10,3 +10,17 @@ function renderViews(views, product) {
 }
 
 export default renderViews;
+
+// rendering clicks
+
+export function renderClicks(clicks, product) {
+    const h3 = document.createElement('h3');
+    h3.textContent = product.name + ': ';
+
+    const clicksResults = document.createElement('clicks-results');
+    clicksResults.textContent = clicks.clicks++;
+    h3.appendChild(clicksResults);
+
+    return h3;
+}
+
