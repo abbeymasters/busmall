@@ -34,6 +34,12 @@ h3 {
     color: #979797;
 }
 
+h4 {
+    font-family: Pacifico;
+    font-size: 20px;
+    color: #979797;
+}
+
 #image {
     background-image: url("/assets/alexandre-godreau-7YlHU_ZPS34-unsplash.jpg");
     background-position: center;
