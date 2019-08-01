@@ -19,20 +19,24 @@ const newProductSet = new ProductSet(allProducts);
 let shownImage = [];
 
 // get three randomProducts to push into displayed empty array
+// need to make sure they don't show duplicates???
+
 const randomOne = newProductSet.getRandomProduct();
 buttonOne.firstChild.src = randomOne.image;
+buttonOne.firstChild.id = randomOne.id;
 shownImage.push(randomOne);
 
 const randomTwo = newProductSet.getRandomProduct();
 buttonTwo.firstChild.src = randomTwo.image;
+buttonTwo.firstChild.id = randomTwo.id;
 shownImage.push(randomTwo);
 
 const randomThree = newProductSet.getRandomProduct();
 buttonThree.firstChild.src = randomThree.image;
+buttonThree.firstChild.id = randomThree.id;
 shownImage.push(randomThree);
 
-// need to make button run 
-
+// need to make buttons functional
 const buttons = document.querySelectorAll('button');
 
 for(let i = 0; i < buttons.length; i++) {
@@ -40,30 +44,27 @@ for(let i = 0; i < buttons.length; i++) {
     button.addEventListener('click', handleUserChoice);
 }
 
-// user needs to choose one of randomly selected images
-
 function handleUserChoice() {
 
-// need to take last shown images out of array and reset shownImage array
+// need to take last shown images out of original array 
     const removedSet = new ProductSet(allProducts);
     for(let i = 0; i < shownImage.length; i++) {
         removedSet.removeById(shownImage[i].id);
     }
-    shownImage = [];
 
 // get three randomProducts to push into new array
-    let randomOne = removedSet.getRandomProduct();
+    const randomOne = removedSet.getRandomProduct();
     buttonOne.firstChild.src = randomOne.image;
-    shownImage.push(randomOne);
+    buttonOne.firstChild.id = randomOne.id;
 
-    let randomTwo = removedSet.getRandomProduct();
+    const randomTwo = removedSet.getRandomProduct();
     buttonTwo.firstChild.src = randomTwo.image;
-    shownImage.push(randomTwo);
+    buttonTwo.firstChild.id = randomTwo.id;
 
-    let randomThree = removedSet.getRandomProduct();
+    const randomThree = removedSet.getRandomProduct();
     buttonThree.firstChild.src = randomThree.image;
-    shownImage.push(randomThree);
-    
+    buttonThree.firstChild.id = randomThree.id;
+
 // adds a turn
     turns++;
 
@@ -72,5 +73,11 @@ function handleUserChoice() {
         quizSection.classList.add('hidden');
         resultsSection.classList.remove('hidden');
     }
+
+// need to track views
+
+
+// need to track clicks
+
     
 }
