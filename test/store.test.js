@@ -38,3 +38,35 @@ test('get survey results', assert => {
     assert.deepEqual(surveyResults, []);
 });
 
+
+test('add survey results', (assert) => {
+    // act
+    const result1 = {
+        date: new Date().toString(),
+        turns: 12,
+        misIds: [{
+            id: 'douglas-fir',
+            misses: 3
+        }]
+    };
+
+    const result2 = {
+        date: new Date().toString(),
+        turns: 19,
+        misIds: [{
+            id: 'douglas-fir',
+            misses: 1
+        }]
+    };
+
+    const expected = [result1, result2];
+
+    // act
+    store.addSurveyResult(result1);
+    store.addSurveyResult(result2);
+    const surveyResults = store.getSurveyResults();
+
+    // arrange
+    assert.deepEqual(surveyResults, expected);
+});
+
