@@ -18,6 +18,15 @@ const store = {
             items = products;
         }
         return items;
+    }, 
+    getSurveyResults() {
+        let surveyResults = store.get('SURVEY_RESULTS');
+        return surveyResults || [];
+    }, 
+    addSurveyResults(result) {
+        const surveyResults = store.getSurveyResults();
+        surveyResults.push(result);
+        store.save('SURVEY_RESULTS', surveyResults);
     }
 };
 
