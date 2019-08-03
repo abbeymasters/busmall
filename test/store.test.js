@@ -45,7 +45,7 @@ test('add survey results', (assert) => {
         date: new Date().toString(),
         turns: 12,
         misIds: [{
-            id: 'douglas-fir',
+            id: 'bubblegum',
             misses: 3
         }]
     };
@@ -54,7 +54,7 @@ test('add survey results', (assert) => {
         date: new Date().toString(),
         turns: 19,
         misIds: [{
-            id: 'douglas-fir',
+            id: 'boots',
             misses: 1
         }]
     };
