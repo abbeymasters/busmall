@@ -133,6 +133,8 @@ function displayResults() {
             clicksResults.appendChild(dom);
         }
     }
+
+    // need to put in chart
 }
 // trackViews function
 function trackViews(productId) {

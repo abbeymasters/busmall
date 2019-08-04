@@ -1,37 +1,45 @@
-import store from './data/store.js';
-import { findById } from './utility-functions.js';
 
-const products = store.getProducts();
 
-const clicksCtx = document.getElementById('chart').getContext('2d');
 
-const productsLabels = [];
-const clicksData = [];
+const clicksCtx = document.getElementById('myChart').getContext('2d');
 
-const totalClicks = [];
-
-for(let i = 0; i < totalClicks.length; i++) {
-    const totalClick = totalClicks[i];
-    const product = findById(products, totalClicks.id);
-    productsLabels.push(product.name);
-    clicksData.push(totalClick.clicks);
-}
-
-const chart = new Chart(clicksCtx, {
+// eslint-disable-next-line no-unused-vars
+const clickChart = new Chart(clicksCtx, {
     // The type of chart we want to create
     type: 'bar',
 
     // The data for our dataset
     data: {
-        labels: productsLabels,
+        labels: ,
         datasets: [{
-            label: 'Results',
+            label: 'Click Results',
+            data: ,
             backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: clicksData
+            borderColor: 'rgb(255, 99, 132)'
         }]
     },
 
     // Configuration options go here
-    options: {}
+    options: {
+        elements: {
+            line: {
+                tension: 0 // disables bezier curves
+            }
+        },
+        scales: {
+            xAxes: [{
+                gridLines: {
+                    color: 'rgba(0, 0, 0, 0)',
+                }
+            }],
+            yAxes: [{
+                gridLines: {
+                    color: 'rgba(0, 0, 0, 0)',
+                },
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
 });

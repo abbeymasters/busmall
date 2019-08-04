@@ -27,6 +27,13 @@ const store = {
         const surveyResults = store.getSurveyResults();
         surveyResults.push(result);
         store.save('SURVEY_RESULTS', surveyResults);
+    }, 
+    getClicks() {
+        let getItems = store.get('items');
+        if(!getItems) {
+            getItems = [];
+        }
+        return getItems;
     }
 };
 
