@@ -12,8 +12,6 @@ const resultsSection = document.getElementById('results-section');
 const turnCount = document.getElementById('turns');
 const clicksResults = document.getElementById('clicks-results');
 const viewsResults = document.getElementById('views-results');
-const showChartsButton = document.getElementById('show-charts');
-const chartsSection = document.getElementById('charts-section');
 
 let turns = 0;
 let views = [];
@@ -55,6 +53,8 @@ for(let i = 0; i < buttons.length; i++) {
 
 function handleUserChoice() {
 
+    const button = event.target;
+    store.saveEachDisplay(shownImage);
 // need to take last shown images out of original array 
     const removedSet = new ProductSet(allProducts);
     for(let i = 0; i < shownImage.length; i++) {
@@ -87,7 +87,6 @@ function handleUserChoice() {
     }
 
     // run tracking clicks
-    const button = event.target;
 
     if(button.value === randomOne.id) {
         trackClicks(randomOne.id);
@@ -164,8 +163,4 @@ function trackClicks(productId) {
     clicks.push(click);
 }
 
-// charts button
-function showCharts() {
-    chartsSection.classList.remove('hidden');
-}
-showChartsButton.addEventListener('click', showCharts);
+

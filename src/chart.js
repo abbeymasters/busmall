@@ -1,5 +1,27 @@
+import store from './data/store.js';
 
+const userClicks = store.getClicks();
+const displayedItems = store.getItemsDisplayed();
+const theList = store.getProducts();
 
+const displayedData = [];
+const productLabels = [];
+const productData = [];
+
+for(let i = 0; i < displayedItems.length; i++) {
+    const item = displayedItems[i];
+    displayedData.push(item.quantity);
+    for(let j = 0; j < theList.length; j++) {
+        if(displayedItems[i].id === theList[j].id) {
+            productLabels.push(theList[j].name);
+        }
+    }
+    for(let k = 0; k < userClicks.length; k++) {
+        if(displayedItems[i] === userClicks[k].id) {
+            productData.push(userClicks[k].quantity);
+        }
+    }
+}
 
 const clicksCtx = document.getElementById('myChart').getContext('2d');
 
@@ -10,12 +32,12 @@ const clickChart = new Chart(clicksCtx, {
 
     // The data for our dataset
     data: {
-        labels: ,
+        labels: productLabels,
         datasets: [{
             label: 'Click Results',
-            data: ,
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)'
+            data: displayedData,
+            backgroundColor: '#ffb9b2',
+            borderColor: '#11bce1'
         }]
     },
 

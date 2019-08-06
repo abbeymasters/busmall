@@ -19,6 +19,16 @@ const store = {
         }
         return items;
     }, 
+    findProduct(products, code) {
+        for(let i = 0; i < products.length; i++) {
+            const product = products[i];
+            
+            if(product.id === code) {
+                return product;
+            }
+        }
+        return null;
+    },
     getSurveyResults() {
         let surveyResults = store.get('SURVEY_RESULTS');
         return surveyResults || [];
@@ -34,7 +44,34 @@ const store = {
             getItems = [];
         }
         return getItems;
-    }
+    },
+    getItemsDisplayed() {
+        let itemsDisplayed = store.get('items-displayed');
+        if(!itemsDisplayed) {
+            itemsDisplayed = [];
+        }
+        return itemsDisplayed;
+    },
+    saveEachDisplay(shownImage) {
+        for(let i = 0; i < shownImage.length; i++) {
+            let itemsDisplayed = this.getItemsDisplayed();
+            let id = shownImage[i].id;
+            const lineItem = this.findProduct(itemsDisplayed, id);
+
+            if(lineItem) {
+                lineItem.quantity++;
+            }
+            else {
+                const lineItem = {
+                    id: id,
+                    quantity: 1
+                };
+    
+                itemsDisplayed.push(lineItem);
+            }
+            
+            store.save('items-displayed', itemsDisplayed);
+        }}
 };
 
 export default store;
