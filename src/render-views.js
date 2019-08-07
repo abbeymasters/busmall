@@ -1,5 +1,4 @@
-// eslint-disable-next-line quotes
-import store from './data/store.js';
+
 
 function renderViews(views, product) {
     const h4 = document.createElement('h4');
