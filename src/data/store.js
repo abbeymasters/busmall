@@ -39,11 +39,27 @@ const store = {
         store.save('SURVEY_RESULTS', surveyResults);
     }, 
     getClicks() {
-        let getItems = store.get('items');
-        if(!getItems) {
-            getItems = [];
+        let clickHistory = store.get('user-clicks');
+        if(!clickHistory) {
+            clickHistory = [];
         }
-        return getItems;
+        return clickHistory;
+    },
+    addProductCode(id) {
+        let clickHistory = this.getClicks();
+        const lineItem = this.findProduct(clickHistory, id);
+        if(lineItem) {
+            lineItem.quantity++;
+        }
+        else {
+            const lineItem = {
+                id: id,
+                quantity: 1
+            };
+
+            clickHistory.push(lineItem);
+        }
+        store.save('user-clicks', clickHistory);
     },
     getItemsDisplayed() {
         let itemsDisplayed = store.get('items-displayed');
@@ -69,7 +85,6 @@ const store = {
     
                 itemsDisplayed.push(lineItem);
             }
-            
             store.save('items-displayed', itemsDisplayed);
         }}
 };

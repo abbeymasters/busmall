@@ -1,3 +1,6 @@
+// eslint-disable-next-line quotes
+import store from './data/store.js';
+
 function renderViews(views, product) {
     const h4 = document.createElement('h4');
     h4.textContent = product.name + ': ';
@@ -19,6 +22,7 @@ export function renderClicks(clicks, product) {
 
     const clicksResults = document.createElement('clicks-results');
     clicksResults.textContent = clicks.clicks++;
+    store.save
     h3.appendChild(clicksResults);
 
     return h3;

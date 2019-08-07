@@ -1,4 +1,5 @@
 import store from './data/store.js';
+import products from './data/store.js';
 
 const userClicks = store.getClicks();
 const displayedItems = store.getItemsDisplayed();
@@ -17,7 +18,7 @@ for(let i = 0; i < displayedItems.length; i++) {
         }
     }
     for(let k = 0; k < userClicks.length; k++) {
-        if(displayedItems[i] === userClicks[k].id) {
+        if(displayedItems[i].id === userClicks[k].id) {
             productData.push(userClicks[k].quantity);
         }
     }
@@ -34,13 +35,18 @@ const clickChart = new Chart(clicksCtx, {
     data: {
         labels: productLabels,
         datasets: [{
-            label: 'Click Results',
+            label: 'View Results',
             data: displayedData,
             backgroundColor: '#ffb9b2',
             borderColor: '#11bce1'
-        }]
+        },
+        {
+            label: 'Clicks Results',
+            data: productData,
+            backgroundColor: '#e1e1e1'
+        }
+        ]
     },
-
     // Configuration options go here
     options: {
         elements: {
@@ -65,3 +71,30 @@ const clickChart = new Chart(clicksCtx, {
         }
     }
 });
+
+
+// // Reset button 
+// const resetButton = document.getElementById('back-to-home');
+// resetButton.addEventListener('click', () => {
+//     // Reset user clicks
+//     let userClicks = store.getClicks();
+//     let displayedItems = store.getItemsDisplayed();
+  
+//     for(let i = 0; i < products.length; i++){
+//         for(let j = 0; j < userClicks.length; j++) {
+//             if(userClicks[j].id === products[i].id) {
+//                 products[i].clicks += userClicks[j].quantity;
+//             }
+//         }
+//         for(let z = 0; z < displayedItems.length; z++) {
+//             if(displayedItems[z].id === products[i].id) {
+//                 products[i].displays += displayedItems[z].quantity;
+//             }
+//         }
+//     }
+//     store.save('products', products);
+//     userClicks = [];
+//     store.save('user-clicks', userClicks);
+//     displayedItems = [];
+//     store.save('items-displayed', displayedItems);
+// });

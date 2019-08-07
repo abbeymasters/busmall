@@ -5,7 +5,6 @@ class ProductSet {
     constructor(products) {
         this.list = products.slice();
     }
-
     getRandomProduct() {
         const index = getRandomInt(this.list.length);
         const product = this.list[index];

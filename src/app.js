@@ -21,7 +21,7 @@ let clicks = [];
 const allProducts = store.getProducts();
 
 // creating a new master list by copying the original products from store 
-const newProductSet = new ProductSet(allProducts);
+let newProductSet = new ProductSet(allProducts);
 
 // create new array for images to go in when shown on page
 let shownImage = [];
@@ -44,6 +44,7 @@ buttonThree.firstChild.id = randomThree.id;
 shownImage.push(randomThree);
 
 // need to make buttons functional
+
 const buttons = document.querySelectorAll('button');
 
 for(let i = 0; i < buttons.length; i++) {
@@ -54,7 +55,9 @@ for(let i = 0; i < buttons.length; i++) {
 function handleUserChoice() {
 
     const button = event.target;
+    store.addProductCode(button.id);
     store.saveEachDisplay(shownImage);
+
 // need to take last shown images out of original array 
     const removedSet = new ProductSet(allProducts);
     for(let i = 0; i < shownImage.length; i++) {

@@ -70,3 +70,14 @@ test('add survey results', (assert) => {
     assert.deepEqual(surveyResults, expected);
 });
 
+test('get clicks', assert => {
+    // arrange
+    const expected = [];
+
+    // act
+    const result = store.getClicks();
+
+    // assert
+    assert.deepEqual(result, expected);
+});
+
