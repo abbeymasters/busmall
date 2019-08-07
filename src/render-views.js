@@ -22,7 +22,6 @@ export function renderClicks(clicks, product) {
 
     const clicksResults = document.createElement('clicks-results');
     clicksResults.textContent = clicks.clicks++;
-    store.save
     h3.appendChild(clicksResults);
 
     return h3;

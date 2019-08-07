@@ -8,6 +8,7 @@ class ProductSet {
     getRandomProduct() {
         const index = getRandomInt(this.list.length);
         const product = this.list[index];
+        this.removeById(product.id);
         return product;
     }
     removeById(productId) {

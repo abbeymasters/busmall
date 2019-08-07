@@ -1,5 +1,4 @@
 import store from './data/store.js';
-import products from './data/store.js';
 
 const userClicks = store.getClicks();
 const displayedItems = store.getItemsDisplayed();
