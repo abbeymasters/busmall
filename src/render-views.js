@@ -1,3 +1,5 @@
+
+
 function renderViews(views, product) {
     const h4 = document.createElement('h4');
     h4.textContent = product.name + ': ';
